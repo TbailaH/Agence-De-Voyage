@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +7,10 @@
 <body>
     <h1>hamza tbilla</h1>
 
-    
+    <?php
+echo "PHP khddama mzyan !";
+?>
+
 
 </body>
 </html>
