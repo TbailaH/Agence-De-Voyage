@@ -64,4 +64,143 @@ body {
   .navbar .nav-links li a:hover {
     color: #f0c040;
   }
-    
+  .notif-badge {
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 7px;
+    font-size: 12px;
+    position: relative;
+    top: -10px;
+    left: -5px;
+  }
+  .site-footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+  }
+  
+  .site-footer a {
+    color: #f0c040;
+    text-decoration: none;
+    margin: 0 8px;
+  }
+  
+  .site-footer a:hover {
+    text-decoration: underline;
+  }
+  .voyages {
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .voyage-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .voyage-card {
+    background-color: #f9f9f9;
+    width: 260px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .voyage-card img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .voyage-card h3 {
+    margin: 10px 0 5px;
+  }
+  
+  .voyage-card .btn {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .voyage-details {
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .details-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .details-container img {
+    width: 100%;
+    border-radius: 8px;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .details-container .infos {
+    text-align: left;
+  }
+  
+  .details-container .btn {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  .reservation-page {
+    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .reservation-container {
+    background-color: #f8f8f8;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+  }
+  
+  .reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .reservation-form input,
+  .reservation-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .reservation-form .btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+  
+  .reservation-form .btn:hover {
+    background-color: #218838;
+  }
+              
