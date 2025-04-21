@@ -203,4 +203,74 @@ body {
   .reservation-form .btn:hover {
     background-color: #218838;
   }
-              
+  .login-page {
+    padding: 40px;
+    max-width: 400px;
+    margin: auto;
+    background: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .login-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .login-form .btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .login-form a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  .register-page {
+    padding: 40px;
+    max-width: 450px;
+    margin: auto;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .register-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .register-form .btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .register-form a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+                  
