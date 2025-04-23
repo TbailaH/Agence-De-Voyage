@@ -3,93 +3,54 @@ body {
     margin: 0;
     padding: 0;
   }
-  
   .banner {
     background: url('../images/banner.jpg') no-repeat center center/cover;
     color: white;
     text-align: center;
-    padding: 80px 20px;
+    padding: 100px 20px;
   }
   
-  .btn {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 20px;
-    display: inline-block;
-    text-decoration: none;
-    border-radius: 5px;
+  .featured {
+    padding: 40px;
+    text-align: center;
   }
   
   .cards {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 30px;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
   }
   
   .card {
-    border: 1px solid #ccc;
-    padding: 15px;
     width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 15px;
     text-align: center;
-    background: #f8f8f8;
-  }
-  .navbar {
-    background-color: #333;
-    padding: 15px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
   
-  .navbar .logo a {
-    color: white;
-    font-weight: bold;
-    font-size: 22px;
-    text-decoration: none;
+  .card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
   }
   
-  .navbar .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 25px;
+  .card h3 {
+    margin: 10px 0 5px;
   }
   
-  .navbar .nav-links li a {
+  .card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007BFF;
     color: white;
     text-decoration: none;
-    font-size: 16px;
-  }
-  
-  .navbar .nav-links li a:hover {
-    color: #f0c040;
-  }
-  .notif-badge {
-    background: red;
-    color: white;
-    border-radius: 50%;
-    padding: 3px 7px;
-    font-size: 12px;
-    position: relative;
-    top: -10px;
-    left: -5px;
-  }
-  .site-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-  }
-  
-  .site-footer a {
-    color: #f0c040;
-    text-decoration: none;
-    margin: 0 8px;
-  }
-  
-  .site-footer a:hover {
-    text-decoration: underline;
+    border-radius: 6px;
   }
   .voyages {
     padding: 40px;
@@ -98,40 +59,42 @@ body {
   
   .voyage-list {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
   }
   
   .voyage-card {
-    background-color: #f9f9f9;
-    width: 260px;
+    width: 250px;
     border: 1px solid #ddd;
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 15px;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    background: #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+    text-align: center;
   }
   
   .voyage-card img {
     width: 100%;
-    border-radius: 5px;
-  }
-  
-  .voyage-card h3 {
-    margin: 10px 0 5px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
   }
   
   .voyage-card .btn {
-    display: inline-block;
     margin-top: 10px;
-    background-color: #007BFF;
+    display: inline-block;
+    background-color: #28a745;
     color: white;
-    padding: 8px 15px;
-    text-decoration: none;
+    padding: 8px 14px;
     border-radius: 5px;
+    text-decoration: none;
   }
   .voyage-details {
     padding: 40px;
+    max-width: 900px;
+    margin: auto;
     text-align: center;
   }
   
@@ -139,49 +102,32 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 800px;
-    margin: auto;
+    gap: 25px;
   }
   
   .details-container img {
     width: 100%;
-    border-radius: 8px;
-    max-height: 400px;
-    object-fit: cover;
-    margin-bottom: 20px;
+    max-width: 600px;
+    border-radius: 10px;
   }
   
   .details-container .infos {
     text-align: left;
-  }
-  
-  .details-container .btn {
-    display: inline-block;
-    margin-top: 15px;
-    background-color: #28a745;
-    color: white;
-    padding: 10px 18px;
-    text-decoration: none;
-    border-radius: 5px;
+    max-width: 600px;
   }
   .reservation-page {
     padding: 40px;
-    max-width: 800px;
+    max-width: 600px;
     margin: auto;
-  }
-  
-  .reservation-container {
-    background-color: #f8f8f8;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
   }
   
   .reservation-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-top: 20px;
   }
   
   .reservation-form input,
@@ -196,20 +142,36 @@ body {
     color: white;
     border: none;
     padding: 12px;
-    cursor: pointer;
     border-radius: 6px;
+    cursor: pointer;
+  }
+  .confirmation-page {
+    padding: 60px;
+    text-align: center;
+    background-color: #f6fff4;
+    border: 1px solid #cce5cc;
+    max-width: 600px;
+    margin: 60px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
   }
   
-  .reservation-form .btn:hover {
-    background-color: #218838;
+  .confirmation-page .btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 20px;
   }
   .login-page {
     padding: 40px;
-    max-width: 400px;
+    max-width: 450px;
     margin: auto;
-    background: #f8f8f8;
-    border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    background: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
   }
   
@@ -233,16 +195,11 @@ body {
     border-radius: 6px;
     cursor: pointer;
   }
-  
-  .login-form a {
-    color: #007BFF;
-    text-decoration: none;
-  }
   .register-page {
     padding: 40px;
-    max-width: 450px;
+    max-width: 500px;
     margin: auto;
-    background: #f9f9f9;
+    background: #f2f2f2;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
@@ -268,9 +225,90 @@ body {
     border-radius: 6px;
     cursor: pointer;
   }
-  
-  .register-form a {
-    color: #007BFF;
-    text-decoration: none;
+  .contact-page {
+    padding: 40px;
+    max-width: 600px;
+    margin: auto;
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
   }
-                  
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .contact-form .btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .apropos-page {
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .apropos-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .apropos-text {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  .apropos-img img {
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+  .dashboard-page {
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .dashboard-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .card-dashboard {
+    background: #f4f4f4;
+    border-radius: 10px;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  }
+  
+  .card-dashboard h3 {
+    margin-bottom: 10px;
+    color: #007BFF;
+  }
+  
+  .card-dashboard p {
+    font-size: 28px;
+    font-weight: bold;
+  }
+                    

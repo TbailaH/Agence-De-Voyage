@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('includes/db.php');
+include('includes/header.php');
 
 $erreur = '';
 
@@ -8,7 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $email = $_POST['email'];
   $motdepasse = $_POST['motdepasse'];
 
-  // Recherche utilisateur
   $stmt = $conn->prepare("SELECT * FROM utilisateur WHERE email = ?");
   $stmt->bind_param("s", $email);
   $stmt->execute();
@@ -16,14 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if ($result->num_rows == 1) {
     $user = $result->fetch_assoc();
-
     if (password_verify($motdepasse, $user['motdepasse'])) {
-      // Authentification réussie
       $_SESSION['user_id'] = $user['id'];
       $_SESSION['user_nom'] = $user['nom'];
       $_SESSION['user_role'] = $user['role'];
 
-      // Redirection selon le rôle
       if ($user['role'] == 'admin') {
         header("Location: admin/dashboard.php");
       } else {
@@ -38,8 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
 }
 ?>
-
-<?php include('includes/header.php'); ?>
 
 <section class="login-page">
   <h2>Connexion</h2>

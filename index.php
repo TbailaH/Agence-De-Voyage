@@ -1,4 +1,8 @@
-<?php include('includes/header.php'); ?>
+<?php
+session_start();
+include('includes/db.php');
+include('includes/header.php');
+?>
 
 <!-- BANNIÈRE -->
 <section class="banner">
@@ -11,21 +15,26 @@
 <section class="featured">
   <h2>Nos voyages organisés</h2>
   <div class="cards">
-    <div class="card">
-      <img src="images/marrakech.jpg" alt="Marrakech">
-      <h3>Marrakech - 3 jours</h3>
-      <p>À partir de 1200 DH</p>
-      <a href="details.php?id=1">Détails</a>
-    </div>
-    <div class="card">
-      <img src="images/chefchaouen.jpg" alt="Chefchaouen">
-      <h3>Chefchaouen - 2 jours</h3>
-      <p>À partir de 950 DH</p>
-      <a href="details.php?id=2">Détails</a>
-    </div>
-    <!-- tu peux ajouter d'autres cartes ici -->
+
+    <?php
+    $query = "SELECT * FROM voyage ORDER BY date_depart ASC LIMIT 3";
+    $result = $conn->query($query);
+
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+        echo '<div class="card">';
+        echo '<img src="images/' . $row['image'] . '" alt="' . $row['destination'] . '">';
+        echo '<h3>' . $row['titre'] . '</h3>';
+        echo '<p>À partir de ' . $row['prix'] . ' DH</p>';
+        echo '<a href="details.php?id=' . $row['id'] . '">Détails</a>';
+        echo '</div>';
+      }
+    } else {
+      echo '<p>Aucun voyage disponible pour le moment.</p>';
+    }
+    ?>
+
   </div>
 </section>
 
 <?php include('includes/footer.php'); ?>
-
