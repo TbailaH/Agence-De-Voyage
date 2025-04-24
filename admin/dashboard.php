@@ -1,17 +1,16 @@
 <?php
 session_start();
-$admin = true; // علامة باش نستعملها فـ header
-
+$admin = true;
 include('../includes/db.php');
 include('../includes/auth.php');
 
-// التأكد أن المستخدم "admin"
+// تحقق من الدور
 if ($_SESSION['user_role'] !== 'admin') {
   header("Location: ../index.php");
   exit;
 }
 
-// جلب الإحصائيات
+// الإحصائيات
 $nbUsers = $conn->query("SELECT COUNT(*) AS total FROM utilisateur")->fetch_assoc()['total'];
 $nbVoyages = $conn->query("SELECT COUNT(*) AS total FROM voyage")->fetch_assoc()['total'];
 $nbReservations = $conn->query("SELECT COUNT(*) AS total FROM reservation")->fetch_assoc()['total'];
@@ -35,6 +34,11 @@ include('../includes/header.php');
       <h3>Réservations</h3>
       <p><?php echo $nbReservations; ?></p>
     </div>
+  </div>
+
+  <div class="dashboard-actions">
+    <a href="reservations.php" class="btn-admin">📋 Gérer les Réservations</a>
+    <a href="voyages.php" class="btn-admin">🌍 Gérer les Voyages</a>
   </div>
 </section>
 

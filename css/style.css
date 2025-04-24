@@ -5,8 +5,8 @@ body {
     background-color: #fff;
   }
   .banner {
-    background: url('../images/banner.jpg') no-repeat center center/cover;
-    color: white;
+    background: url('../images/rabat.jpg') no-repeat center center/cover;
+    color: red;
     text-align: center;
     padding: 100px 20px;
   }
@@ -311,6 +311,199 @@ body {
   .card-dashboard p {
     font-size: 28px;
     font-weight: bold;
-  }
+  } 
+
   
-                    
+  .admin-voyages {
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.admin-voyages h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.admin-voyages .btn {
+  background-color: #28a745;
+  color: white;
+  padding: 8px 14px;
+  text-decoration: none;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.btn-edit {
+  background-color: #ffc107;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-left: 5px;
+}
+.admin-table img {
+  max-width: 60px;
+  height: auto;
+  border-radius: 6px;
+}
+.admin-reservations {
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.admin-reservations h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+.btn-dash {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-dash:hover {
+  background-color: #0056b3;
+}
+.dashboard-page {
+  padding: 40px;
+  text-align: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.dashboard-page h2 {
+  margin-bottom: 30px;
+  font-size: 26px;
+}
+
+.dashboard-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.card-dashboard {
+  background: #f1f1f1;
+  padding: 20px;
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card-dashboard h3 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.card-dashboard p {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.dashboard-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn-admin {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.btn-admin:hover {
+  background-color: #0056b3;
+}
+.admin-messages {
+  padding: 40px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.btn-repondre {
+  background-color: #28a745;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.btn-repondre:hover {
+  background-color: #218838;
+}
+.notif-badge {
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  position: relative;
+  top: -10px;
+  left: -5px;
+}
+.message-details {
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+
+
+            
