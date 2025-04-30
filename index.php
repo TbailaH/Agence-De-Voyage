@@ -17,7 +17,7 @@ include('includes/header.php');
     <div class="cards">
 
         <?php
-    $query = "SELECT * FROM voyage ORDER BY date_depart ASC LIMIT 2";
+    $query = "SELECT * FROM voyage ORDER BY date_depart ASC LIMIT 3";
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
