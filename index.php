@@ -6,18 +6,18 @@ include('includes/header.php');
 
 <!-- BANNIÈRE -->
 <section class="banner">
-  <h1>Bienvenue chez Voyages Maroc</h1>
-  <p>Explorez les meilleures destinations avec nous !</p>
-  <a href="voyages.php" class="btn">Voir les voyages</a>
+    <h1>Bienvenue chez Voyages Maroc</h1>
+    <p>Explorez les meilleures destinations avec nous !</p>
+    <a href="voyages.php" class="btn">Voir les voyages</a>
 </section>
 
 <!-- VOYAGES EN VEDETTE -->
 <section class="featured">
-  <h2>Nos voyages organisés</h2>
-  <div class="cards">
+    <h2>Nos voyages organisés</h2>
+    <div class="cards">
 
-    <?php
-    $query = "SELECT * FROM voyage ORDER BY date_depart ASC LIMIT 3";
+        <?php
+    $query = "SELECT * FROM voyage ORDER BY date_depart ASC LIMIT 2";
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
@@ -34,7 +34,7 @@ include('includes/header.php');
     }
     ?>
 
-  </div>
+    </div>
 </section>
 
 <?php include('includes/footer.php'); ?>
