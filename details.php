@@ -40,6 +40,32 @@ if ($result->num_rows == 1) {
       <p><strong>Date de retour :</strong> <?php echo $voyage['date_retour']; ?></p>
       <h3>Description :</h3>
       <p><?php echo $voyage['description']; ?></p>
+      <!-- Bouton pour ouvrir le modal -->
+<button class="btn-programme" onclick="document.getElementById('programmeModal').style.display='block'">🗓️ Voir le programme du jour</button>
+
+<!-- Modal -->
+<div id="programmeModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('programmeModal').style.display='none'">&times;</span>
+    <h3>Programme du voyage</h3>
+    <ul>
+    <?php
+    $stmt = $conn->prepare("SELECT * FROM programme_jour WHERE voyage_id = ? ORDER BY jour ASC");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $res = $stmt->get_result();
+    while ($p = $res->fetch_assoc()) {
+      echo "<li><strong>Jour {$p['jour']}:</strong> " . htmlspecialchars($p['titre']);
+      if (!empty($p['heure_debut']) && !empty($p['heure_fin'])) {
+        echo " ({$p['heure_debut']} - {$p['heure_fin']})";
+      }
+      echo "<br><em>" . nl2br(htmlspecialchars($p['description'])) . "</em></li>";
+    }
+    ?>
+    </ul>
+  </div>
+</div>
+
 
       <a href="reservation.php?id=<?php echo $voyage['id']; ?>" class="btn">Réserver maintenant</a>
     </div>
