@@ -3,6 +3,16 @@ if (session_status() === PHP_SESSION_NONE) {
   session_start();
 }
 $prefix = isset($admin) ? '../' : '';
+$notif_non_lu = 0;
+if (isset($_SESSION['user_id']) && $_SESSION['user_role'] === 'client') {
+  include_once($prefix . 'includes/db.php');
+  $stmtNotif = $conn->prepare("SELECT COUNT(*) as total FROM notification WHERE utilisateur_id = ? AND lu = 'non'");
+  $stmtNotif->bind_param("i", $_SESSION['user_id']);
+  $stmtNotif->execute();
+  $resNotif = $stmtNotif->get_result();
+  $notif_non_lu = $resNotif->fetch_assoc()['total'];
+}
+
 ?>
 
 <?php
@@ -109,10 +119,15 @@ if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin') {
         <li><a href="<?php echo $prefix; ?>apropos.php">À propos</a></li>
         <li><a href="<?php echo $prefix; ?>contact.php">Contact</a></li>
         <li><a href="<?php echo $prefix; ?>client/profil.php">👤Profil</a></li>
-        <li><a href="<?php echo $prefix; ?>client/notifications.php">
-          <i class="fa-solid fa-bell"></i>
-          <span class="notif-badge">0</span>
-        </a></li>
+        <li>
+  <a href="<?php echo $prefix; ?>client/notifications.php">
+    <i class="fa-solid fa-bell"></i>
+    <?php if ($notif_non_lu > 0): ?>
+      <span class="notif-badge"><?php echo $notif_non_lu; ?></span>
+    <?php endif; ?>
+  </a>
+</li>
+
         <li><a href="<?php echo $prefix; ?>logout.php">Déconnexion</a></li>
       <?php endif; ?>
     </ul>
