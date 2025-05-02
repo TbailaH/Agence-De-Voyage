@@ -97,7 +97,9 @@ if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin') {
       <?php else: ?>
         
         <!-- Si utilisateur connecté -->
+        
         <li><a href="logout.php">Déconnexion</a></li>
+        <li><a href="client/profil.php">👤 Profil</a></li>
         <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin'): ?>
   <li>
     <a href="<?php echo $prefix; ?>admin/message_contact.php">
