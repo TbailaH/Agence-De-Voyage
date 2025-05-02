@@ -1,5 +1,7 @@
 <?php
 session_start();
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : null;
+
 include('includes/db.php');
 include('includes/header.php');
 
@@ -12,8 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $sujet = $_POST['sujet'];
   $contenu = $_POST['contenu'];
 
-  $stmt = $conn->prepare("INSERT INTO message_contact (nom, email, sujet, contenu) VALUES (?, ?, ?, ?)");
-  $stmt->bind_param("ssss", $nom, $email, $sujet, $contenu);
+  $stmt = $conn->prepare("INSERT INTO message_contact (nom, email, sujet, contenu, date_envoi, statut, utilisateur_id)
+VALUES (?, ?, ?, ?, NOW(), 'non lu', ?)");
+$stmt->bind_param("ssssi", $nom, $email, $sujet, $contenu, $user_id);
+
 
   if ($stmt->execute()) {
     $success = "Votre message a bien été envoyé.";

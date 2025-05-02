@@ -28,6 +28,23 @@ if (!$message) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $reponse = $_POST['reponse'];
   $stmt = $conn->prepare("UPDATE message_contact SET reponse_admin = ?, statut = 'répondu' WHERE id = ?");
+  // جلب utilisateur_id و sujet للرسالة
+$stmtU = $conn->prepare("SELECT utilisateur_id, sujet FROM message_contact WHERE id = ?");
+$stmtU->bind_param("i", $id);
+$stmtU->execute();
+$resU = $stmtU->get_result();
+$data = $resU->fetch_assoc();
+$user_id = $data['utilisateur_id'];
+$sujet = $data['sujet'];
+
+// إرسال notification
+$contenuNotif = "📬 Réponse à votre message \"$sujet\" :\n\n" . $reponse;
+
+
+$stmtNotif = $conn->prepare("INSERT INTO notification (utilisateur_id, type, contenu) VALUES (?, 'reponse_message', ?)");
+$stmtNotif->bind_param("is", $user_id, $contenuNotif);
+$stmtNotif->execute();
+
   $stmt->bind_param("si", $reponse, $id);
   if ($stmt->execute()) {
     $success = "Réponse envoyée avec succès.";

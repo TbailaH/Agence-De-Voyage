@@ -48,7 +48,7 @@ $conn->query("UPDATE notification SET lu = 'oui' WHERE utilisateur_id = $user_id
     <?php while ($n = $res->fetch_assoc()): ?>
       <div class="notification">
         <div class="date"><?php echo $n['date_envoi']; ?></div>
-        <p><?php echo htmlspecialchars($n['contenu']); ?></p>
+        <p><?php echo nl2br(htmlspecialchars($n['contenu'])); ?></p>
       </div>
     <?php endwhile; ?>
   <?php endif; ?>
