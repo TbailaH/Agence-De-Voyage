@@ -27,6 +27,27 @@ if ($result->num_rows == 1) {
 }
 ?>
 
+<style>
+  .btn {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+
 <section class="voyage-details">
   <h2><?php echo $voyage['titre']; ?></h2>
 
@@ -76,5 +97,33 @@ if ($result->num_rows == 1) {
     </div>
   </div>
 </section>
+
+<?php if (isset($_SESSION['user_id'])): ?>
+  <a href="client/ajouter_avis.php?voyage_id=<?php echo $voyage['id']; ?>" class="btn">📝 Laisser un avis</a>
+<?php endif; ?>
+
+<section style="max-width:700px;margin:auto;padding:20px;">
+  <h3>🧑‍💬 Avis sur ce voyage</h3>
+  <?php
+  $avis_stmt = $conn->prepare("SELECT a.commentaire, a.note, a.date_publication, u.nom 
+                               FROM avis a 
+                               JOIN utilisateur u ON a.utilisateur_id = u.id 
+                               WHERE a.voyage_id = ? 
+                               ORDER BY a.date_publication DESC");
+  $avis_stmt->bind_param("i", $id); // $id = id du voyage
+  $avis_stmt->execute();
+  $avis_result = $avis_stmt->get_result();
+
+  while ($avis = $avis_result->fetch_assoc()):
+  ?>
+    <div style="border-bottom:1px solid #ccc;margin-bottom:10px;padding:10px 0;">
+      <strong><?php echo htmlspecialchars($avis['nom']); ?></strong> - 
+      <?php echo str_repeat("⭐", $avis['note']); ?>
+      <br><small><?php echo $avis['date_publication']; ?></small>
+      <p><?php echo nl2br(htmlspecialchars($avis['commentaire'])); ?></p>
+    </div>
+  <?php endwhile; ?>
+</section>
+
 
 <?php include('includes/footer.php'); ?>

@@ -93,6 +93,7 @@ if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin') {
       <?php elseif ($_SESSION['user_role'] === 'admin'): ?>
         <!-- Admin -->
         <li><a href="<?php echo $prefix; ?>admin/voyages.php">Voyages</a></li>
+        <li><a href="<?php echo $prefix; ?>admin/avis.php">avis</a></li>
         <li><a href="<?php echo $prefix; ?>admin/message_contact.php">
           <i class="fa-solid fa-envelope"></i>
           <?php if ($notif_count > 0): ?>
@@ -107,7 +108,7 @@ if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin') {
         <li><a href="<?php echo $prefix; ?>voyages.php">Voyages</a></li>
         <li><a href="<?php echo $prefix; ?>apropos.php">À propos</a></li>
         <li><a href="<?php echo $prefix; ?>contact.php">Contact</a></li>
-        <li><a href="<?php echo $prefix; ?>client/profil.php">👤 Profil</a></li>
+        <li><a href="<?php echo $prefix; ?>client/profil.php">👤Profil</a></li>
         <li><a href="<?php echo $prefix; ?>client/notifications.php">
           <i class="fa-solid fa-bell"></i>
           <span class="notif-badge">0</span>

@@ -1,5 +1,6 @@
 <?php
 session_start();
+$admin = false;
 include('../includes/db.php');
 include('../includes/header.php');
 
@@ -24,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $email = $_POST['email'];
   $telephone = $_POST['telephone'];
   
-  // إذا بغا يبدل كلمة السر
   if (!empty($_POST['motdepasse'])) {
     $motdepasse = password_hash($_POST['motdepasse'], PASSWORD_DEFAULT);
     $stmt = $conn->prepare("UPDATE utilisateur SET nom=?, prenom=?, email=?, telephone=?, motdepasse=? WHERE id=?");
@@ -40,6 +40,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 }
 ?>
+
+<style>
+  .profil-page {
+    max-width: 600px;
+    margin: auto;
+    padding: 40px;
+  }
+
+  .profil-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .profil-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  .profil-form .btn {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+</style>
 
 <section class="profil-page">
   <h2>👤 Mon Profil</h2>

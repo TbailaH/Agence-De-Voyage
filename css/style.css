@@ -778,36 +778,4 @@ body {
   background-color: #007bff;
   color: white;
 }*/
-
-.profil-page {
-  max-width: 600px;
-  margin: auto;
-  padding: 40px;
-}
-
-.profil-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.profil-form input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-
-.profil-form .btn {
-  background-color: #007BFF;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-
-
-
-
             
