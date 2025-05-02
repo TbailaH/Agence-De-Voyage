@@ -59,4 +59,4 @@ include('../includes/header.php');
   </form>
 </section>
 
-<?php include('../includes/footer.php'); ?>
+

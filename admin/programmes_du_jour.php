@@ -108,4 +108,4 @@ include('../includes/header.php');
   <?php endif; ?>
 </section>
 
-<?php include('../includes/footer.php'); ?>
+

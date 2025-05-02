@@ -58,4 +58,4 @@ include('../includes/header.php');
   </table>
 </section>
 
-<?php include('../includes/footer.php'); ?>
+

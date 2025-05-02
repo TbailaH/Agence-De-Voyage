@@ -67,7 +67,12 @@ if ($result->num_rows == 1) {
 </div>
 
 
-      <a href="reservation.php?id=<?php echo $voyage['id']; ?>" class="btn">Réserver maintenant</a>
+<?php if (isset($_SESSION['user_id'])): ?>
+  <a href="reservation.php?id=<?php echo $voyage['id']; ?>" class="btn">Réserver maintenant</a>
+<?php else: ?>
+  <a href="login.php" class="btn" onclick="return confirm('Vous devez d\'abord vous connecter pour réserver.')">Réserver maintenant</a>
+<?php endif; ?>
+
     </div>
   </div>
 </section>

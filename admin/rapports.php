@@ -35,4 +35,4 @@ $nbAvis = $conn->query("SELECT COUNT(*) AS total FROM avis")->fetch_assoc()['tot
   </div>
 </section>
 
-<?php include('../includes/footer.php'); ?>
+

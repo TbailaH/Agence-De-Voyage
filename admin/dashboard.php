@@ -50,7 +50,7 @@ include('../includes/header.php');
       <i class="fas fa-envelope"></i>
       <span>Messages</span>
     </a>
-    <a href="logout.php" class="dashboard-box box8">
+    <a href="<?php echo $prefix; ?>logout.php" class="dashboard-box box8">
       <i class="fas fa-sign-out-alt"></i>
       <span>Déconnexion</span>
     </a>
