@@ -33,6 +33,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   if ($stmt->execute()) {
     $success = "Voyage ajouté avec succès.";
+    $contenuNotif = "🌍 Nouvelle offre: Le voyage '$titre' vient d'être ajouté !";
+    $resUsers = $conn->query("SELECT id FROM utilisateur");
+  
+    while ($u = $resUsers->fetch_assoc()) 
+      $userId = $u['id'];
+      $stmtNotif = $conn->prepare("INSERT INTO notification (utilisateur_id, type, contenu) VALUES (?, 'nouveau_voyage', ?)");
+      $stmtNotif->bind_param("is", $userId, $contenuNotif);
+      $stmtNotif->execute();
   } else {
     $error = "Erreur lors de l'ajout du voyage: " . $conn->error;
   }
